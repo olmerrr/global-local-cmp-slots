@@ -2,15 +2,24 @@
   <section>
     <div>
       <header>
-        <slot name="header"></slot>
+        <slot name="header">
+          <div><h2>Default Slot</h2></div>
+        </slot>
       </header>
+      <!-- default slot -->
       <slot></slot>
+      <!-- default slot -->
+
     </div>
   </section>
 </template>
 
 <script>
-export default {};
+export default {
+  mounted() {
+    console.log(this.$slots.default);
+  },
+};
 </script>
 <style scoped>
 section div {
